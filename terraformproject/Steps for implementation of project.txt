@@ -1,0 +1,34 @@
+Steps for implementation of project
+
+The task to create the infrastructure within aws cloud by using 
+IAAC (infrastructure as a code) terraform tool
+
+the automation of infrastructure contains of creating vpc, subnets, IGW, RT, S3, security group(sg)
+two EC2 machines with webpages in subnets by using sg, and last providing the load balancing to them.
+
+step1: create aws account and get credentials of secretkey and accesskey and install terraform in local
+
+step2: create folder in local and open cli or vs code
+
+step3: create provider.tf file to access the provider, and main.tf file to write the code for infrastructure creation
+variables.tf -- to create variables in the code (optional)
+variables.tfvars -- to give the actual values of the variables (optional)
+
+step4: create a vpc(virtual private cloud) by following the syntax and requirements
+
+step5: inside the vpc create 2 subnets either public or private
+
+step6: provide an internet gateway to the subnets and provide route table with necessary 
+       inbound and outbound rules for both subnets
+
+step7: create security group for the vpc with ingress and egress
+
+step8: create bucket with unique bucket name
+
+step9: create basic html files of userdata1.sh and userdata2.sh to call in the creation servers 
+
+step10: now create server1 by using vpc security group in subet1 also provide basic html file userdata1.sh
+        like server1 create server2 with customed security group of vpc in subnet2 also provide the webpage userdata2.sh
+step11: create an application load balancer with necessary target groups with http port
+
+apply this process and execute the hcl code to create the aws infrastructure automation with terraform.
